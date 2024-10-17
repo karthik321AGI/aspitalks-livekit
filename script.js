@@ -1,5 +1,5 @@
 const BACKEND_URL = 'https://token-server-pk5o.onrender.com'; // You'll update this after Render deployment
-const LIVEKIT_WS_URL = 'wss://4b38-2401-4900-1c0e-8fff-00-3-67a0.ngrok-free.app';
+const LIVEKIT_WS_URL = 'wss://render-livkitserver.onrender.com';
 
 let room;
 let audioTrack;
