@@ -1,4 +1,4 @@
-const BACKEND_URL = 'https://token-server-pk5o.onrender.com'; // You'll update this after Render deployment
+const BACKEND_URL = 'wss://171.61.66.198:7880'; // You'll update this after Render deployment
 const LIVEKIT_WS_URL = 'wss://render-livkitserver.onrender.com';
 
 let room;

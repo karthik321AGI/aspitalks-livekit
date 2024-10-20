@@ -1,10 +1,8 @@
+# docker-compose.yml
 services:
   livekit:
     image: livekit/livekit-server
-    ports:
-      - "7880:7880"
-      - "7881:7881"
-      - "7882:7882/udp"
+    network_mode: "host" # Use host networking
     volumes:
       - ./livekit.yaml:/livekit.yaml
-    command: --config /livekit.yaml --bind 0.0.0.0
+    command: --config /livekit.yaml

@@ -1,8 +1,19 @@
+services:
+  livekit:
+    image: livekit/livekit-server
+    network_mode: "host" # Use host networking
+    volumes:
+      - ./livekit.yaml:/livekit.yaml
+    command: --config /livekit.yaml
+
+# livekit.yaml
 port: 7880
 rtc:
   tcp_port: 7881
   port_range_start: 50000
   port_range_end: 60000
   use_external_ip: true
+  # Replace with your actual public IP
+  node_ip: 171.61.66.198 # You can find this at whatismyip.com
 keys:
   APIK3yxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx: APISECRETxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
