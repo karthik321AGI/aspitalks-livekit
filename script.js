@@ -1,5 +1,5 @@
-const BACKEND_URL = 'wss://171.61.66.198:7880'; // You'll update this after Render deployment
-const LIVEKIT_WS_URL = 'wss://render-livkitserver.onrender.com';
+const LIVEKIT_WS_URL = 'wss://106.212.240.128:7880';
+const BACKEND_URL = 'https://token-server-pk5o.onrender.com';
 
 let room;
 let audioTrack;
@@ -99,6 +99,14 @@ async function joinRoom() {
     room.on(LivekitClient.RoomEvent.Disconnected, handleDisconnection);
     room.on(LivekitClient.RoomEvent.TrackMuted, handleTrackMuted);
     room.on(LivekitClient.RoomEvent.TrackUnmuted, handleTrackUnmuted);
+
+    room.on(LivekitClient.RoomEvent.Connected, () => {
+      console.log('Successfully connected to LiveKit server');
+    });
+
+    room.on(LivekitClient.RoomEvent.ConnectionStateChanged, (state) => {
+      console.log('Connection state:', state);
+    });
 
     console.log('Connecting to LiveKit server at:', LIVEKIT_WS_URL);
     await room.connect(LIVEKIT_WS_URL, token);
