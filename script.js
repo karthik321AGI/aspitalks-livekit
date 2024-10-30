@@ -1,4 +1,4 @@
-const LIVEKIT_WS_URL = 'wss://34.100.253.143:7880';
+const LIVEKIT_WS_URL = 'ws://34.100.253.143:7880';
 const BACKEND_URL = 'https://token-server-pk5o.onrender.com';
 
 let room;
